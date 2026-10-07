@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>박철용 ♥ 심다은 결혼합니다</title>
+    <meta name="description" content="2027년 04월 04일 일요일 오전 11시 20분 더 파티움 여의도 그랜드컨벤션 홀" />
+    <meta property="og:title" content="박철용 ♥ 심다은 결혼합니다" />
+    <meta property="og:description" content="2027년 04월 04일 일요일 오전 11시 20분 더 파티움 여의도" />
+    <meta property="og:image" content="assets/hero_temp.webp" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Naver Maps Open API v3 SDK (Injected securely via GitHub Secrets / Actions) -->
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=__NAVER_MAP_KEY__"></script>
+  </head>
+  <body>
+    <!-- Floating BGM Button -->
+    <audio id="bgm-audio" loop preload="none">
+      <source src="assets/bgm_temp.m4a" type="audio/mp4" />
+    </audio>
+    <button id="bgm-toggle-btn" class="bgm-toggle-btn" aria-label="BGM 재생/일시정지" title="BGM 켜기/끄기">
+      <svg id="bgm-icon-mute" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path>
+        <line x1="22" y1="9" x2="16" y2="15"></line>
+        <line x1="16" y1="9" x2="22" y2="15"></line>
+      </svg>
+      <svg id="bgm-icon-play" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      </svg>
+    </button>
+
+    <div class="card-edge-bleed">
+      <!-- 1. Main Hero Section -->
+      <section class="main-hero-wrap" data-section-id="main">
+        <div class="hero-media-container" data-sticker-anchor="main">
+          <div class="hero-media-box">
+            <img src="assets/hero_temp.webp" alt="웨딩 메인 이미지" fetchpriority="high" loading="eager" />
+            <div class="hero-overlay-shadow"></div>
+            <div class="midnight-rider-anchor">
+              <div class="midnight-rider-font">Our wedding</div>
+            </div>
+            <div class="hero-date-bottom">Apr 04, 2027</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Lettering / Invitation Section -->
+      <section class="section-wrapper" data-section-id="lettering">
+        <div class="section-header">
+          <div class="section-subtitle">INVITATION</div>
+          <h3 class="section-title">소중한 분들을 초대합니다</h3>
+        </div>
+        <div class="invitation-text-content">
+          <p>
+            벚꽃이 피어나는 화사한 봄날,<br />
+            서로의 봄이 되어 평생을 함께합니다.<br />
+            귀한 걸음으로 축복해 주시면 감사하겠습니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. Couple / Schedule Info Section -->
+      <section class="section-wrapper main-info-section" data-section-id="couple-info">
+        <div class="main-info-box">
+          <div class="main-info-names">박철용<span class="dot">·</span>심다은</div>
+          <div class="main-info-sub-family">박희은 · 전예숙의 차남 &nbsp;|&nbsp; 심규정 · 이은재의 장녀</div>
+          <div class="main-info-schedule">
+            2027년 04월 04일 일요일 오전 11시 20분<br />
+            더 파티움 여의도 그랜드컨벤션 홀
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Visual Date Block Section -->
+      <div class="visual-date-block" data-section-id="visualBlock">
+        <div class="visual-date-display">APR 04</div>
+      </div>
+
+      <!-- 5. RSVP Section -->
+      <section class="section-wrapper" data-section-id="rsvp">
+        <div class="section-header">
+          <div class="section-subtitle">R.S.V.P</div>
+          <h3 class="section-title">참석 의사 전달</h3>
+        </div>
+        <p class="section-intro-text">
+          참석 여부를 미리 알려주시면<br />
+          예식을 준비하는 데 큰 도움이 됩니다.
+        </p>
+        <div class="section-btn-wrap">
+          <button type="button" class="btn-primary-pill" id="btn-open-rsvp">참석 의사 전달하기</button>
+        </div>
+      </section>
+
+      <!-- 6. Account Section -->
+      <section class="section-wrapper" data-section-id="account">
+        <div class="section-header">
+          <div class="section-subtitle">ACCOUNT</div>
+          <h3 class="section-title">마음 전하실 곳</h3>
+        </div>
+        <p class="section-intro-text">
+          멀리서도 마음으로 함께해 주시는<br />
+          소중한 축복에 깊이 감사드립니다.<br />
+          따뜻한 격려를 마음에 담아 예쁘게 살겠습니다.
+        </p>
+
+        <div class="account-trigger-grid">
+          <button type="button" class="btn-account-trigger groom" id="btn-open-groom-account">신랑측 마음 전하실 곳</button>
+          <button type="button" class="btn-account-trigger bride" id="btn-open-bride-account">신부측 마음 전하실 곳</button>
+        </div>
+      </section>
+
+      <!-- 7. Gallery Section (Horizontal Carousel with 3D Depth) -->
+      <section class="section-wrapper gallery-section" data-section-id="gallery">
+        <div class="section-header">
+          <div class="section-subtitle">GALLERY</div>
+          <h3 class="section-title">웨딩 앨범</h3>
+        </div>
+
+        <div class="gallery-carousel-wrapper">
+          <div class="gallery-carousel-track" id="gallery-carousel-track">
+            <!-- Set 0 (Clone Pre) -->
+            <div class="gallery-slide" data-set="0" data-real-index="0">
+              <img src="assets/gallery_1.webp" alt="웨딩 사진 1" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="0" data-real-index="1">
+              <img src="assets/gallery_2.webp" alt="웨딩 사진 2" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="0" data-real-index="2">
+              <img src="assets/gallery_3.webp" alt="웨딩 사진 3" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="0" data-real-index="3">
+              <img src="assets/gallery_4.webp" alt="웨딩 사진 4" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="0" data-real-index="4">
+              <img src="assets/gallery_5.webp" alt="웨딩 사진 5" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="0" data-real-index="5">
+              <img src="assets/gallery_6.webp" alt="웨딩 사진 6" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+
+            <!-- Set 1 (Main Active Focus Set) -->
+            <div class="gallery-slide active" data-set="1" data-real-index="0">
+              <img src="assets/gallery_1.webp" alt="웨딩 사진 1" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="1" data-real-index="1">
+              <img src="assets/gallery_2.webp" alt="웨딩 사진 2" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="1" data-real-index="2">
+              <img src="assets/gallery_3.webp" alt="웨딩 사진 3" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="1" data-real-index="3">
+              <img src="assets/gallery_4.webp" alt="웨딩 사진 4" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="1" data-real-index="4">
+              <img src="assets/gallery_5.webp" alt="웨딩 사진 5" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="1" data-real-index="5">
+              <img src="assets/gallery_6.webp" alt="웨딩 사진 6" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+
+            <!-- Set 2 (Clone Post) -->
+            <div class="gallery-slide" data-set="2" data-real-index="0">
+              <img src="assets/gallery_1.webp" alt="웨딩 사진 1" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="2" data-real-index="1">
+              <img src="assets/gallery_2.webp" alt="웨딩 사진 2" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="2" data-real-index="2">
+              <img src="assets/gallery_3.webp" alt="웨딩 사진 3" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="2" data-real-index="3">
+              <img src="assets/gallery_4.webp" alt="웨딩 사진 4" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="2" data-real-index="4">
+              <img src="assets/gallery_5.webp" alt="웨딩 사진 5" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+            <div class="gallery-slide" data-set="2" data-real-index="5">
+              <img src="assets/gallery_6.webp" alt="웨딩 사진 6" loading="lazy" />
+              <div class="slide-dim-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox Fullscreen Swipe Modal -->
+      <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+        <button id="lightbox-close" class="lightbox-close" aria-label="닫기">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="lightbox-slider-track" id="lightbox-slider-track">
+          <!-- Set 0 (Clone Pre) -->
+          <div class="lightbox-slide" data-set="0" data-real-index="0">
+            <img src="assets/gallery_1.webp" alt="확대 사진 1" />
+          </div>
+          <div class="lightbox-slide" data-set="0" data-real-index="1">
+            <img src="assets/gallery_2.webp" alt="확대 사진 2" />
+          </div>
+          <div class="lightbox-slide" data-set="0" data-real-index="2">
+            <img src="assets/gallery_3.webp" alt="확대 사진 3" />
+          </div>
+          <div class="lightbox-slide" data-set="0" data-real-index="3">
+            <img src="assets/gallery_4.webp" alt="확대 사진 4" />
+          </div>
+          <div class="lightbox-slide" data-set="0" data-real-index="4">
+            <img src="assets/gallery_5.webp" alt="확대 사진 5" />
+          </div>
+          <div class="lightbox-slide" data-set="0" data-real-index="5">
+            <img src="assets/gallery_6.webp" alt="확대 사진 6" />
+          </div>
+
+          <!-- Set 1 (Main Set) -->
+          <div class="lightbox-slide" data-set="1" data-real-index="0">
+            <img src="assets/gallery_1.webp" alt="확대 사진 1" />
+          </div>
+          <div class="lightbox-slide" data-set="1" data-real-index="1">
+            <img src="assets/gallery_2.webp" alt="확대 사진 2" />
+          </div>
+          <div class="lightbox-slide" data-set="1" data-real-index="2">
+            <img src="assets/gallery_3.webp" alt="확대 사진 3" />
+          </div>
+          <div class="lightbox-slide" data-set="1" data-real-index="3">
+            <img src="assets/gallery_4.webp" alt="확대 사진 4" />
+          </div>
+          <div class="lightbox-slide" data-set="1" data-real-index="4">
+            <img src="assets/gallery_5.webp" alt="확대 사진 5" />
+          </div>
+          <div class="lightbox-slide" data-set="1" data-real-index="5">
+            <img src="assets/gallery_6.webp" alt="확대 사진 6" />
+          </div>
+
+          <!-- Set 2 (Clone Post) -->
+          <div class="lightbox-slide" data-set="2" data-real-index="0">
+            <img src="assets/gallery_1.webp" alt="확대 사진 1" />
+          </div>
+          <div class="lightbox-slide" data-set="2" data-real-index="1">
+            <img src="assets/gallery_2.webp" alt="확대 사진 2" />
+          </div>
+          <div class="lightbox-slide" data-set="2" data-real-index="2">
+            <img src="assets/gallery_3.webp" alt="확대 사진 3" />
+          </div>
+          <div class="lightbox-slide" data-set="2" data-real-index="3">
+            <img src="assets/gallery_4.webp" alt="확대 사진 4" />
+          </div>
+          <div class="lightbox-slide" data-set="2" data-real-index="4">
+            <img src="assets/gallery_5.webp" alt="확대 사진 5" />
+          </div>
+          <div class="lightbox-slide" data-set="2" data-real-index="5">
+            <img src="assets/gallery_6.webp" alt="확대 사진 6" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Date & Calendar & Countdown Section -->
+      <section class="section-wrapper" data-section-id="date">
+        <div class="section-header">
+          <div class="section-subtitle">WEDDING DAY</div>
+          <h3 class="section-title">예식 안내</h3>
+        </div>
+        <p class="date-summary-text">2027년 04월 04일 일요일 오전 11시 20분</p>
+
+        <div class="calendar-month-title">4월</div>
+
+        <div class="custom-calendar">
+          <div class="custom-calendar-header">
+            <div class="sunday">일</div>
+            <div>월</div>
+            <div>화</div>
+            <div>수</div>
+            <div>목</div>
+            <div>금</div>
+            <div class="saturday">토</div>
+          </div>
+          <div class="custom-calendar-body">
+            <div class="custom-calendar-day other-month">28</div>
+            <div class="custom-calendar-day other-month">29</div>
+            <div class="custom-calendar-day other-month">30</div>
+            <div class="custom-calendar-day other-month">31</div>
+            <div class="custom-calendar-day">1</div>
+            <div class="custom-calendar-day">2</div>
+            <div class="custom-calendar-day saturday">3</div>
+
+            <div class="custom-calendar-day sunday selected">
+              <div class="selected-bg"></div>
+              <span>4</span>
+            </div>
+            <div class="custom-calendar-day">5</div>
+            <div class="custom-calendar-day">6</div>
+            <div class="custom-calendar-day">7</div>
+            <div class="custom-calendar-day">8</div>
+            <div class="custom-calendar-day">9</div>
+            <div class="custom-calendar-day saturday">10</div>
+
+            <div class="custom-calendar-day sunday">11</div>
+            <div class="custom-calendar-day">12</div>
+            <div class="custom-calendar-day">13</div>
+            <div class="custom-calendar-day">14</div>
+            <div class="custom-calendar-day">15</div>
+            <div class="custom-calendar-day">16</div>
+            <div class="custom-calendar-day saturday">17</div>
+
+            <div class="custom-calendar-day sunday">18</div>
+            <div class="custom-calendar-day">19</div>
+            <div class="custom-calendar-day">20</div>
+            <div class="custom-calendar-day">21</div>
+            <div class="custom-calendar-day">22</div>
+            <div class="custom-calendar-day">23</div>
+            <div class="custom-calendar-day saturday">24</div>
+
+            <div class="custom-calendar-day sunday">25</div>
+            <div class="custom-calendar-day">26</div>
+            <div class="custom-calendar-day">27</div>
+            <div class="custom-calendar-day">28</div>
+            <div class="custom-calendar-day">29</div>
+            <div class="custom-calendar-day">30</div>
+            <div class="custom-calendar-day other-month saturday">1</div>
+          </div>
+        </div>
+
+        <div class="dday-countdown-wrap">
+          <div class="dday-title">
+            철용
+            <svg viewBox="0 0 24 24">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            다은 결혼식까지
+          </div>
+          <div class="countdown-numbers-row">
+            <span id="countdown-days">0</span>
+            <span id="countdown-hours">0</span>
+            <span id="countdown-mins">0</span>
+            <span id="countdown-secs">0</span>
+          </div>
+          <div class="countdown-labels-row">
+            <span>DAYS</span>
+            <span>HOUR</span>
+            <span>MIN</span>
+            <span>SEC</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Location & Naver Map Section -->
+      <section class="section-wrapper" data-section-id="venue">
+        <div class="section-header">
+          <div class="section-subtitle">LOCATION</div>
+          <h3 class="section-title">오시는 길</h3>
+        </div>
+
+        <div class="venue-details-box">
+          <div class="venue-name">더 파티움 여의도 그랜드컨벤션 홀</div>
+          <div class="venue-address">서울 영등포구 은행로 30 B1층, 2층</div>
+        </div>
+
+        <!-- Festival Notice (Direct transport-block) -->
+        <div class="transport-block">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+            여의도 벚꽃축제 안내
+          </h4>
+          <p>
+            되도록 대중교통을 이용해 주시면 감사하겠습니다.<br />
+            부디 오시는 길마저 즐거운 봄날의 나들이로 기억되길 바랍니다.
+          </p>
+        </div>
+
+        <!-- Naver Map Canvas -->
+        <div id="map-area" class="map-container"></div>
+
+        <!-- Map App Shortcuts (3 Buttons Equal Width) -->
+        <div class="map-apps-pills">
+          <a href="https://map.naver.com/p/search/%EB%8D%94%ED%8C%8C%ED%8B%B0%EC%9B%80%20%EC%97%AC%EC%9D%98%EB%8F%84" target="_blank" rel="noopener" class="btn-map-pill"> 네이버 지도 </a>
+          <a href="https://map.kakao.com/link/search/더파티움 여의도" target="_blank" rel="noopener" class="btn-map-pill"> 카카오맵 </a>
+          <a href="tel:02-784-0000" class="btn-map-pill call"> 웨딩홀 연락하기 </a>
+        </div>
+
+        <div class="transport-section">
+          <div class="transport-block">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="3" width="16" height="14" rx="2"></rect>
+                <path d="M4 11h16"></path>
+                <path d="M12 3v8"></path>
+                <circle cx="8" cy="14" r="1"></circle>
+                <circle cx="16" cy="14" r="1"></circle>
+                <path d="m6 17-2 4"></path>
+                <path d="m18 17 2 4"></path>
+              </svg>
+              지하철 안내
+            </h4>
+            <p>
+              9호선 국회의사당역 3번 출구 (도보 5분)
+            </p>
+          </div>
+
+          <div class="transport-block">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="3" width="16" height="15" rx="2"></rect>
+                <line x1="4" y1="9" x2="20" y2="9"></line>
+                <circle cx="7.5" cy="14.5" r="1"></circle>
+                <circle cx="16.5" cy="14.5" r="1"></circle>
+                <line x1="6" y1="18" x2="6" y2="21"></line>
+                <line x1="18" y1="18" x2="18" y2="21"></line>
+              </svg>
+              셔틀버스 안내
+            </h4>
+            <p>
+              5호선 여의나루역 1번 출구 셔틀버스 무료 운행
+            </p>
+          </div>
+
+          <div class="transport-block">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"></path>
+                <circle cx="7" cy="17" r="2"></circle>
+                <path d="M9 17h6"></path>
+                <circle cx="17" cy="17" r="2"></circle>
+              </svg>
+              자가용 및 주차 안내
+            </h4>
+            <p>
+              장소 내 주차 가능 · 90분 무료 주차
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 1-Click Guest Photo Upload Section -->
+      <section class="section-wrapper snap-wrap" data-section-id="snap">
+        <div class="snap-upload-card">
+          <div class="snap-upload-title">순간의 사진을 공유해 주세요</div>
+          <div class="snap-upload-desc">
+            예식 당일 촬영하신 예쁜 사진과 영상을 올려주시면<br />
+            신랑 신부에게 소중한 추억으로 저장됩니다.
+          </div>
+          <input type="file" id="photo-file-input" accept="image/*,video/*" multiple style="display: none" />
+          <label for="photo-file-input" class="btn-primary-pill btn-snap-upload">
+            사진 간편 업로드하기
+          </label>
+          <div id="photo-upload-status" class="upload-status-box">
+            <div id="photo-status-text">사진을 전송 중입니다...</div>
+            <div class="progress-bar-wrap">
+              <div id="photo-progress-bar" class="progress-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Ending Section -->
+      <section class="ending-section" data-section-id="ending">
+        <img src="assets/ending_temp.webp" alt="엔딩 사진" loading="lazy" />
+        <div class="ending-overlay-dark"></div>
+        <div class="ending-content">
+          <div class="ending-message">
+            저희 두 사람의 새로운 시작을<br />
+            함께 축복해 주셔서 진심으로 감사합니다.
+          </div>
+        </div>
+        <div class="ending-footer">
+          박철용 ♥ 심다은 · 2027. 04. 04<br />
+          Copyright © 2027 Chulyong &amp; Daeun. All rights reserved.
+        </div>
+      </section>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvp-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span class="modal-title">참석 의사 전달</span>
+          <button type="button" class="modal-close-btn" id="rsvp-modal-close" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal-body">
+
+          <form id="rsvp-form">
+            <div class="rsvp-form-row">
+              <div class="rsvp-pill-group">
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_side" value="신랑측" checked />
+                  <span class="rsvp-pill-btn">신랑측</span>
+                </label>
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_side" value="신부측" />
+                  <span class="rsvp-pill-btn">신부측</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rsvp-form-row">
+              <label for="rsvp-name" class="rsvp-row-label">성함</label>
+              <input type="text" id="rsvp-name" class="rsvp-input" placeholder="성함을 입력해 주세요" required />
+            </div>
+
+            <div class="rsvp-form-row">
+              <label class="rsvp-row-label">참석 여부</label>
+              <div class="rsvp-pill-group">
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_attend" value="참석" checked />
+                  <span class="rsvp-pill-btn">참석</span>
+                </label>
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_attend" value="불참" />
+                  <span class="rsvp-pill-btn">미참석</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rsvp-form-row" id="rsvp-count-wrap">
+              <label class="rsvp-row-label">동행 인원 (본인 포함)</label>
+              <div class="rsvp-pill-grid">
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_count" value="1명" checked />
+                  <span class="rsvp-pill-btn">1명 (본인)</span>
+                </label>
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_count" value="2명" />
+                  <span class="rsvp-pill-btn">2명</span>
+                </label>
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_count" value="3명" />
+                  <span class="rsvp-pill-btn">3명</span>
+                </label>
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_count" value="4명 이상" />
+                  <span class="rsvp-pill-btn">4명 이상</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rsvp-form-row" id="rsvp-meal-wrap">
+              <label class="rsvp-row-label">식사 여부</label>
+              <div class="rsvp-pill-group">
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_meal" value="식사 예정" checked />
+                  <span class="rsvp-pill-btn">식사 예정</span>
+                </label>
+                <label class="rsvp-pill-item">
+                  <input type="radio" name="rsvp_meal" value="식사 안함" />
+                  <span class="rsvp-pill-btn">식사 안함</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rsvp-form-row">
+              <label for="rsvp-message" class="rsvp-row-label">축하 메시지 (선택)</label>
+              <textarea id="rsvp-message" class="rsvp-textarea" rows="2" placeholder="따뜻한 축하의 한마디를 남겨주세요"></textarea>
+            </div>
+
+            <button type="submit" id="rsvp-submit-btn" class="btn-rsvp-modal-submit">전달하기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Groom Account Modal -->
+    <div id="account-modal-groom" class="modal-overlay" aria-hidden="true" role="dialog">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span class="modal-title groom">신랑측 마음 전하실 곳</span>
+          <button type="button" class="modal-close-btn" id="groom-modal-close" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">축하해 주시는 따뜻한 마음에 깊이 감사드립니다.</p>
+          <div class="account-modal-card">
+            <div class="holder-row">신랑 박철용</div>
+            <div class="number-row">우리은행 1002-930-969225</div>
+            <div class="account-modal-actions">
+              <button type="button" class="btn-modal-action copy btn-copy-account" data-account="우리은행 1002-930-969225 박철용">계좌번호 복사</button>
+              <a href="https://qr.kakaopay.com/FeBEI2NXE" target="_blank" rel="noopener" class="btn-modal-action kakaopay"> 카카오페이 송금 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bride Account Modal -->
+    <div id="account-modal-bride" class="modal-overlay" aria-hidden="true" role="dialog">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span class="modal-title bride">신부측 마음 전하실 곳</span>
+          <button type="button" class="modal-close-btn" id="bride-modal-close" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">축하해 주시는 따뜻한 마음에 깊이 감사드립니다.</p>
+          <div class="account-modal-card">
+            <div class="holder-row">신부 심다은</div>
+            <div class="number-row">우리은행 1002-148-136925</div>
+            <div class="account-modal-actions">
+              <button type="button" class="btn-modal-action copy btn-copy-account" data-account="우리은행 1002-148-136925 심다은">계좌번호 복사</button>
+              <a href="https://qr.kakaopay.com/Ej9MbqLEc" target="_blank" rel="noopener" class="btn-modal-action kakaopay"> 카카오페이 송금 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Element -->
+    <div id="toast-msg" class="toast-msg"></div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

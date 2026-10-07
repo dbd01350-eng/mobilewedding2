@@ -26,7 +26,7 @@
   - 배경: 퓨어 화이트 (`#ffffff`) 및 소프트 그린 (`#a7c8a3`, `#f5f8f4`)
   - 타이포그래피: `Gowun Batang`, `Crimson Pro`, `Inter`, `Caveat` (영문 필기체)
 - **지도 연동**:
-  - 네이버 지도 Open API v3 (`oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=...` - GitHub Secrets `NAVER_MAP_KEY`로 자동 주입)
+  - 네이버 지도 Open API v3 (`oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=sfb9d8eiq2` - GitHub Secrets `NAVER_MAP_KEY`로 자동 주입)
   - 웨딩홀: 더 파티움 여의도 (위도 `37.5284`, 경도 `126.9205`)
 - **구글 연동 엔드포인트**:
   - RSVP & 1-Click 구글 드라이브 사진 업로드: `https://script.google.com/macros/s/AKfycbyRpBZMmXNy1Scj5YMFaS2DztLaOVrj5fyL358FblVtIc89pgftdQMJI4RP1xrVQ-n_/exec`

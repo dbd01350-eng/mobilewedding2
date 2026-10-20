@@ -28,6 +28,7 @@ jobs:
       - name: Inject Naver Map Client ID Secret
         run: |
           sed -i "s/__NAVER_MAP_KEY__/${{ secrets.NAVER_MAP_KEY }}/g" index.html
+          sed -i "s/__NAVER_MAP_KEY__/${{ secrets.NAVER_MAP_KEY }}/g" demo.html
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
